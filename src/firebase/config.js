@@ -1,4 +1,7 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
+import 'firebase/firestore';
+
 const firebaseConfig = {
     apiKey: "AIzaSyC93mxWiGfL3x7jvfdenrigLOw08a5-U5I",
     authDomain: "keep-clone-39dbd.firebaseapp.com",
@@ -12,3 +15,10 @@ const firebaseConfig = {
 
 //   initialize firebase
 firebase.initializeApp(firebaseConfig); 
+
+const projectStorage = firebase.storage();
+const projectFirestore = firebase.firestore();
+export {
+  projectStorage,
+  projectFirestore
+}
