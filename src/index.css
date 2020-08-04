@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--secondary);
 }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
 .App {
   max-width: 960px;
@@ -36,7 +40,77 @@ body {
   margin-top: 60px;
   font-size: 2.6rem;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.file-upload {
+  position: relative;
+  border: 1px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50px;
+  padding: 30px;
+  margin: 10px auto;
+  font-size: 30px;
+  cursor: pointer;
+  transition: .2s all;
+  background-color: #fff;
+  color: var(--primary);
+
+} 
+.file-upload:hover {
+  background-color: var(--primary);
+  color: #fff;
+  animation: spin .5s ease-in-out;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.icon-upload {
+  position: absolute;
+  line-height: -0;
+  font-weight: 600;
+}
+.file-upload input[type="file"] {
+  display: none;
+}
+.output {
+  text-align: center;
+}
+.error {
+  color: var(--error);
+}
+.progress-bar {
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  background-color: var(--primary);
+}
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  box-shadow: 0px 10px 30px -14px rgba(0,0,0,0.75);
 }
